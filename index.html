@@ -2,39 +2,44 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Viruj Balasoupramanien</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./styles/main.css">
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./styles/main.css" />
 </head>
 
 <body>
 	<div id="container--main">
 
-		<section id="wrapper--hero" class="section--page">
-			<img id="profile-pic" src="./assets/images/headshot.png">
+		<section id="wrapper--hero" class="section--page hidden">
+			<img id="profile-pic" src="./assets/images/headshot.png" />
 
 			<div>
 				<h1 id="user-name">Viruj Balasoupramanien</h1>
 				<p id="bio">Software developer & Mechanical engineer.<br />I solve both real and virtual world problems.
 				</p>
-				<p id="email">📧 virujbala.96@gmail.com</p>
+				<a id="email" href="mailto:virujbala.96@gmail.com">📧 virujbala.96@gmail.com</a>
 			</div>
 		</section>
 
-		<section class="section--page">
-
+		<section class="section--page hidden">
+			<h2></h2>
 			<div id="socials--list">
-				<a href="https://www.linkedin.com/in/viruj-bala-soupramanien-1883ab185/" target="_blank">Linkedin</a>
-				<a href="https://github.com/viruj96" target="_blank">Github</a>
+				<a href="https://www.linkedin.com/in/viruj-bala-soupramanien-1883ab185/" target="_blank">LinkedIn</a>
+				<a href="https://github.com/viruj96" target="_blank">GitHub</a>
 				<a href="./assets/CV.pdf" target="_blank">Download Resume</a>
 			</div>
 		</section>
 
-		<section class="section--page">
+		<section class="section--page hidden">
 			<h2>Skills & Qualifications</h2>
+
 			<ul id="qualifications--list">
 				<li>✔️ <span id="it"></span> experience with front & backend development</li>
 				<li>✔️ Knowledge in API & Database Design</li>
@@ -43,7 +48,7 @@
 			</ul>
 		</section>
 
-		<section class="section--page">
+		<section class="section--page hidden">
 			<h2>Tech stack</h2>
 
 			<div id="wrapper--techstack__items">
@@ -56,11 +61,11 @@
 			</div>
 		</section>
 
-		<section id="work-history-wrapper" class="section--page">
+		<section id="work-history-wrapper" class="section--page hidden">
 			<h2>Work History</h2>
 
 			<div class="line-break"></div>
-			<div class="card--work-history">
+			<div class="card--work-history hidden">
 				<strong>Application Development Associate | Accenture</strong>
 				<p>04/2021 - Present</p>
 				<p>Maintain and develop evolutions for a number of client web and mobile applications</p>
@@ -75,31 +80,34 @@
 			</div>
 
 			<div class="line-break"></div>
-			<div class="card--work-history">
+			<div class="card--work-history hidden">
 				<strong>Project Coordinator | Water Research (Taylor Smith Group)</strong>
 				<p>02/2020 - 09/2020</p>
 				<p>Oversaw several different projects for the company and group</p>
 				<ul>
 					<li>Kick-started international operations in neighbouring island Reunion</li>
-					<li>Was tasked with digitizing daily workflow. I created an Excel application using VBA and macros to facilitate foreman procedures and reduce the wait-time for engineers to receive reports</li>
+					<li>Was tasked with digitizing daily workflow. I created an Excel application using VBA and macros
+						to facilitate foreman procedures and reduce the wait-time for engineers to receive reports</li>
 					<li>Conducted geotechincal investigations and surveys</li>
 				</ul>
 			</div>
 
 			<div class="line-break"></div>
-			<div class="card--work-history">
+			<div class="card--work-history hidden">
 				<strong>Mechanical Engineer Intern | Air Mauritius</strong>
 				<p>12/2018 - 02/2019</p>
 				<p>Received training in several departments</p>
 				<ul>
-					<li>In the Air-frame and Mechanical Systems department, I was trained to track aircraft part lifecycles, reading drawings and processing documents, and setting up maintenance tasks</li>
-					<li>Worked in the Wheels and Brakes Workshop, maintaining and/or repairing aircraft wheels and brakes</li>
+					<li>In the Air-frame and Mechanical Systems department, I was trained to track aircraft part
+						lifecycles, reading drawings and processing documents, and setting up maintenance tasks</li>
+					<li>Worked in the Wheels and Brakes Workshop, maintaining and/or repairing aircraft wheels and
+						brakes</li>
 					<li>Trained to perform <abbr title="Non-Destructive Testing">NDT</abbr> on the fleet</li>
 				</ul>
 			</div>
 
 			<div class="line-break"></div>
-			<div class="card--work-history">
+			<div class="card--work-history hidden">
 				<strong>Engineering Intern | Hotel Istana KLCC</strong>
 				<p>12/2017 - 01/2018</p>
 				<p>Routinely maintained electrical and mechanical systems in the hotel</p>
@@ -114,11 +122,43 @@
 		</section>
 	</div>
 
-	<script>
+	<div id="theme-toggle" class="fas fa-sun" title="Light mode"></div>
+
+	<script defer>
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show');
+				} else {
+					entry.target.classList.remove('show');
+				}
+			})
+		});
+
+		const sections = document.querySelectorAll('.hidden');
+		sections.forEach((el) => observer.observe(el));
+
 		const IT_EXP = new Date().getFullYear() - 2021;
 		let expYears = IT_EXP > 1 ? `${IT_EXP} years` : `${IT_EXP} year`;
 
 		document.getElementById('it').innerHTML = expYears;
+
+		const theme = document.getElementById('theme-toggle');
+		theme.addEventListener('click', () => {
+			theme.classList.toggle('fa-moon');
+			theme.classList.toggle('fa-sun');
+
+			if (theme.classList.contains('fa-moon')) {
+				document.body.classList.add('light');
+				theme.setAttribute('title', 'Dark mode');
+				theme.style.padding = '0.5% 0.7%';
+			}
+			else {
+				document.body.classList.remove('light');
+				theme.setAttribute('title', 'Light mode');
+				theme.style.padding = '0.5%';
+			}
+		});
 	</script>
 </body>
 

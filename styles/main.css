@@ -1,23 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
 :root {
+	--mainTextColor: #fff;
+	--secondaryTextColor: #adb0b1;
+	--mainLinkColor: rgb(30, 190, 214);
+	--mainBorderColor: #2b3031;
+	--mainBgColor: #131415;
+	--mainBoxShadow: rgba(50, 50, 50, 0.3);
+}
+
+body.light {
 	--mainTextColor: #000;
 	--secondaryTextColor: rgb(51, 51, 51);
 	--mainLinkColor: #0da2b8;
 	--mainBorderColor: rgb(218, 218, 218);
 	--mainBgColor: rgb(249, 250, 251);
-
-	--mainTextColor-dark: #fff;
-	--secondaryTextColor-dark: #adb0b1;
-	--mainLinkColor-dark: rgb(30, 190, 214);
-	--mainBorderColor-dark: #2b3031;
-	--mainBgColor-dark: #131415;
-
-	--mainTextColor: var(--mainTextColor-dark);
-	--secondaryTextColor: var(--secondaryTextColor-dark);
-	--mainLinkColor: var(--mainLinkColor-dark);
-	--mainBorderColor: var(--mainBorderColor-dark);
-	--mainBgColor: var(--mainBgColor-dark);
+	--mainBoxShadow: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -25,7 +23,6 @@
 	line-height: 1.5em;
 	box-sizing: border-box;
 	color: var(--mainTextColor);
-
 }
 
 body {
@@ -145,13 +142,40 @@ a {
 
 .card--project a {
 	color: var(--mainTextColor);
-
 	transition: 0.3s;
 }
 
 .card--project a:hover {
-	color: rgb(30, 190, 214);
+	color: var(--mainLinkColor);
+}
 
+#theme-toggle {
+	font-size: x-large;
+	border-radius: 50%;
+	border: 1px solid var(--mainBorderColor);
+	position: sticky;
+	bottom: 1%;
+	left: 99%;
+	padding: 0.5%;
+	box-shadow: 0 5px 10px var(--mainBoxShadow);
+	cursor: pointer;
+}
+
+.hidden {
+	opacity: 0;
+	transition: all 1s;
+	filter: blur(5px);
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+}
+
+@media(prefers-reduced-motion) {
+	.hidden {
+		transition: none;
+	}
 }
 
 @media(max-width:600px) {
