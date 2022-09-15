@@ -42,6 +42,10 @@ a {
 	font-weight: 500;
 }
 
+.links {
+	width: 30%;
+}
+
 li {
 	line-height: 1.9em;
 }
@@ -69,7 +73,7 @@ a {
 }
 
 #user-name {
-	font-size: 48px;
+	font-size: 3em;
 	line-height: 1em;
 }
 
@@ -104,8 +108,12 @@ a {
 	font-size: 0.9em;
 }
 
-#qualifications--list {
+.qualifications--list {
 	list-style: none;
+}
+
+.check-items {
+	color: lime;
 }
 
 #wrapper--techstack__items {
@@ -149,6 +157,20 @@ a {
 	color: var(--mainLinkColor);
 }
 
+.fa-solid {
+	margin-right: 1%;
+}
+
+.card--education span {
+	font-weight: 700;
+	font-style: italic;
+}
+
+.card--education li {
+	font-size: 0.9em;
+	font-weight: 100;
+}
+
 #theme-toggle {
 	font-size: x-large;
 	border-radius: 50%;
@@ -178,7 +200,7 @@ a {
 	}
 }
 
-@media(max-width:600px) {
+@media(max-width:700px) {
 
 	.section--page {
 		padding-top: 1em;
@@ -195,6 +217,9 @@ a {
 		height: 200px;
 	}
 
+	#user-name {
+		font-size: 2em;
+	}
 
 	.card--work-history {
 		border-left: none;
