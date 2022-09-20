@@ -161,6 +161,22 @@ a {
 .card--project a:hover {
 	color: var(--mainLinkColor);
 }
+
+/* Project Pages */
+.project--body {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+#poem {
+	text-align: center;
+	font-style: italic;
+}
+
+#poem p {
+	line-height: 0.5;
+}
+
 /* End Projects */
 
 /* Education section */
@@ -187,6 +203,11 @@ a {
 .fa-trophy {
 	color: yellow;
 }
+
+.fa-arrow-left-long {
+	color: var(--mainLinkColor);
+}
+/* End Font Awesome */
 
 /* Light-Dark mode */
 #theme-toggle {
