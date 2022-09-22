@@ -87,6 +87,10 @@ a {
 	color: var(--mainTextColor);
 }
 
+#email:hover {
+	color: var(--mainLinkColor);
+}
+
 #socials--list {
 	display: flex;
 	justify-content: space-between;
