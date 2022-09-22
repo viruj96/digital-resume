@@ -177,6 +177,23 @@ a {
 	line-height: 0.5;
 }
 
+.source {
+	list-style-type: "💾";
+	list-style-position: inside;
+}
+
+.paragraph {
+	color: var(--secondaryTextColor);
+	font-size: 1em;
+}
+
+.paragraph ul {
+	margin: 0;
+}
+
+.paragraph li {
+	line-height: 1.5;
+}
 /* End Projects */
 
 /* Education section */
@@ -214,9 +231,9 @@ a {
 	font-size: x-large;
 	border-radius: 50%;
 	border: 1px solid var(--mainBorderColor);
-	position: sticky;
+	position: fixed;
 	bottom: 1%;
-	left: 99%;
+	right: 1%;
 	padding: 0.5%;
 	box-shadow: 0 5px 10px var(--mainBoxShadow);
 	cursor: pointer;
