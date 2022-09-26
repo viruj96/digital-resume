@@ -134,6 +134,10 @@ a {
 	padding: 0.5em 1em;
 	align-items: center;
 }
+
+#certificates {
+	display: flex;
+}
 /* End Skills */
 
 /* Work section */
@@ -213,7 +217,7 @@ a {
 /* End Education */
 
 /* Font Awesome */
-.fa-solid {
+.fa-solid, .fa-brands {
 	margin-right: 1%;
 }
 
