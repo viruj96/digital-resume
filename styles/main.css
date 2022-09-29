@@ -194,6 +194,12 @@ a {
 	list-style-position: inside;
 }
 
+.url {
+	list-style-type: "💻";
+	list-style-position: inside;
+	margin-bottom: 0;
+}
+
 .paragraph {
 	color: var(--secondaryTextColor);
 	font-size: 1em;
