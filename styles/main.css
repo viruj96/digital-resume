@@ -10,6 +10,7 @@
 	--mainBoxShadow: rgba(50, 50, 50, 0.3);
 	--checkColor: lime;
 	--trophyColor: yellow;
+	--hoverColor: rgba(255, 255, 255, 0.6);
 }
 
 body.light {
@@ -21,6 +22,7 @@ body.light {
 	--mainBoxShadow: rgba(0, 0, 0, 0.3);
 	--checkColor: lime;
 	--trophyColor: orange;
+	--hoverColor: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -60,6 +62,22 @@ li {
 .section--page {
 	padding-top: 1em;
 	padding-bottom: 1em;
+}
+
+.collapsible {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.collapsible:hover * {
+	color: var(--hoverColor);
+}
+
+.content {
+	display: none;
 }
 /* End Shared */
 
@@ -163,6 +181,7 @@ a {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	border-top: 1px solid var(--mainBorderColor);
+	cursor: pointer;
 }
 
 .card--project a {
@@ -170,9 +189,10 @@ a {
 	transition: 0.3s;
 }
 
-.card--project a:hover {
+.card--project:hover *:not(i) {
 	color: var(--mainLinkColor);
 }
+/* End Projects section */
 
 /* Project Pages */
 .project--body {
@@ -189,15 +209,8 @@ a {
 	line-height: 0.5;
 }
 
-.source {
-	list-style-type: "💾";
-	list-style-position: inside;
-}
-
-.url {
-	list-style-type: "💻";
-	list-style-position: inside;
-	margin-bottom: 0;
+.project--body ul {
+	list-style: none;
 }
 
 .paragraph {
@@ -255,7 +268,18 @@ a {
 	padding: 0.5%;
 	box-shadow: 0 5px 10px var(--mainBoxShadow);
 	cursor: pointer;
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+	box-shadow: 0 0 2px 1px var(--hoverColor);
 }
+
+#theme-toggle:hover {
+	transform: scale(1.1);
+	transition-duration: 1s;
+	transition-timing-function: ease-in;
+	box-shadow: 0 0 3px 2px var(--hoverColor);
+}
+/* End Light-Dark mode */
 
 /* Scroll Effects */
 .hidden {
@@ -274,6 +298,7 @@ a {
 		transition: none;
 	}
 }
+/* End Scroll Effects */
 
 /* Responsive */
 @media(max-width:700px) {
