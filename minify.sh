@@ -36,5 +36,6 @@ mv "$temp_file" "$output_file"
 git config --global user.name "viruj96"
 git config --global user.email "virujbala.96@gmail.com"
 git add .
+git status
 git commit -m "Commit dist folder"
 git push
