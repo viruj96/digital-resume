@@ -16,7 +16,7 @@ jobs:
       - name: Run pre-deploy script
         run: |
           chmod +x ./minify.sh
-          bash ./minify.sh
+          ./minify.sh
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.1
