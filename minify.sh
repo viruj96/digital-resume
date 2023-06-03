@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install minify node package
-# npm install -g minify
+npm install -g minify
 
 # Declare variables
 css_line=20
