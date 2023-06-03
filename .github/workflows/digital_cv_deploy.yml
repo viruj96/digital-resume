@@ -14,4 +14,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run pre-deploy script
-        run: bash minify.sh
+        run: |
+          chmod +x ./path/to/script.sh
+          ./minify.sh
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "viruj96"
+          git config --global user.email "virujbala.96@gmail.com"
+          git add .
+          git commit -m "Commit dist folder"
+          git push
