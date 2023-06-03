@@ -79,6 +79,7 @@ li {
 .content {
 	display: none;
 }
+
 /* End Shared */
 
 /* Hero section */
@@ -136,6 +137,7 @@ a {
 .links {
 	width: 30%;
 }
+
 /* End Hero */
 
 /* Skills section */
@@ -162,6 +164,7 @@ a {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
+
 /* End Skills */
 
 /* Work section */
@@ -176,6 +179,7 @@ a {
 	background-color: var(--mainBorderColor);
 	height: 1px;
 }
+
 /* End Work */
 
 /* Projects section */
@@ -194,6 +198,7 @@ a {
 .card--project:hover *:not(i) {
 	color: var(--mainLinkColor);
 }
+
 /* End Projects section */
 
 /* Project Pages */
@@ -227,6 +232,7 @@ a {
 .paragraph li {
 	line-height: 1.5;
 }
+
 /* End Projects */
 
 /* Education section */
@@ -239,10 +245,12 @@ a {
 	font-size: 0.9em;
 	font-weight: 100;
 }
+
 /* End Education */
 
 /* Font Awesome */
-.fa-solid, .fa-brands {
+.fa-solid,
+.fa-brands {
 	margin-right: 1%;
 }
 
@@ -257,6 +265,7 @@ a {
 .fa-arrow-left-long {
 	color: var(--mainLinkColor);
 }
+
 /* End Font Awesome */
 
 /* Light-Dark mode */
@@ -281,6 +290,7 @@ a {
 	transition-timing-function: ease-in;
 	box-shadow: 0 0 3px 2px var(--hoverColor);
 }
+
 /* End Light-Dark mode */
 
 /* Scroll Effects */
@@ -293,6 +303,7 @@ a {
 .show {
 	opacity: 1;
 	filter: blur(0);
+	transition: height 0.3 ease, opacity 0.3 ease;
 }
 
 @media(prefers-reduced-motion) {
@@ -300,6 +311,7 @@ a {
 		transition: none;
 	}
 }
+
 /* End Scroll Effects */
 
 /* Responsive */
@@ -329,3 +341,5 @@ a {
 		padding-left: 0;
 	}
 }
+
+/* End Responsive */
