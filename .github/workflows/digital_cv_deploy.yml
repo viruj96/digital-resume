@@ -17,13 +17,8 @@ jobs:
         run: |
           chmod +x ./minify.sh
           bash ./minify.sh
-          
-      - name: Commit and push changes
-        run: |
           git config --global user.name "viruj96"
           git config --global user.email "virujbala.96@gmail.com"
-          git status
           git add .
-          git status
           git commit -m "Commit dist folder"
           git push
