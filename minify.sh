@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install minify node package
-npm install -g minify
+# npm install -g minify
 
 # Declare variables
 css_line=20
@@ -14,7 +14,7 @@ theme_line=24
 theme_text="<script defer src='./dist/theme.min.js'></script>"
 
 source="./index.html"
-dest="./dist/index/min.html"
+dest="./dist/index.min.html"
 temp_file=$(mktemp)
 
 directory="./dist/"
@@ -35,4 +35,5 @@ awk -v line="$theme_line" -v text="$theme_text" 'NR == line {$0 = text} {print}'
   && mv "$temp_file" "$dest" 
 
 # Minify html file
-minify ./index.html ./dist/index.min.html
+minify $(dest) $(temp_file)
+mv "$temp_file" "$dest"
