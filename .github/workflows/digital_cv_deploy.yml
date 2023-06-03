@@ -17,3 +17,9 @@ jobs:
         run: |
           chmod +x ./minify.sh
           bash ./minify.sh
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: main
+          folder: './dist'
