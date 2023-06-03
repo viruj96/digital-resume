@@ -34,3 +34,4 @@ minify ./dist/index.min.html > ${temp_file}
 mv "$temp_file" "$output_file"
 
 ls
+ls ./dist
