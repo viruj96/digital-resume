@@ -17,6 +17,11 @@ source="./index.html"
 dest="./dist/index/min.html"
 temp_file=$(mktemp)
 
+directory="./dest/"
+if [ ! -d "$directory" ]; then
+    mkdir -p "$directory"
+fi
+
 # Minify script and style files
 minify ./styles/main.css ./dist/main.min.css
 minify ./scripts/index.js ./dist/index.min.js
