@@ -15,8 +15,8 @@ jobs:
 
       - name: Run pre-deploy script
         run: |
-          chmod +x "$(pwd)./minify.sh"
-          bash "$(pwd)./minify.sh"
+          chmod +x "$(pwd)/minify.sh"
+          bash "$(pwd)/minify.sh"
           
       - name: Commit and push changes
         run: |
