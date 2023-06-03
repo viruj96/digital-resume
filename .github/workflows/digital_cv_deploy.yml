@@ -17,10 +17,6 @@ jobs:
         run: |
           chmod +x ./minify.sh
           bash ./minify.sh
-
-      - name: List files
-        run: |
-          ls
           
       - name: Commit and push changes
         run: |
