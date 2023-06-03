@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npm install -g minify
+
 directory="./dist"
 
 if [ ! -d "$directory" ]; then
