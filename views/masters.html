@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Viruj Balasoupramanien</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../styles/main.css">
+	<script defer src="../scripts/theme.js"></script>
+</head>
+
+<body>
+	<div id="container--main">
+		<a href="../index.html#projects"><i class="fa-solid fa-arrow-left-long"></i> Go Back</a>
+		<h1>University of Mauritius Thesis</h1>
+
+		<div class="project--body">
+			<h3>Leak Detection and Localization in Water Pipelines using an Ensemble Deep Learning Classification Model
+			</h3>
+
+			<p>
+				The first water pipelines were made of wood, clay or stone, and date back to ancient civilizations. The
+				Roman aqueducts are perhaps the most well-known example of early water pipelines. Over the years the
+				material used to make pipelines evolved and in the 1800s, water pipelines were mostly made of metals
+				like cast iron. The development of water pipelines allowed for the growth of cities and the rise of
+				industry. Today, water pipelines are made of a variety of materials, including PVC and HDPE.
+			</p>
+			<p>
+				There are over 3.5 million km of pipeline around the world today, with
+				some stretching thousands of kilometers to deliver water to hard reach places or areas with water
+				scarcity. Pipelines have made water more accessible, cities have designed complex <abbr title="water distribution
+				networks">WDN</abbr> to ensure the most efficient water deliver system. However, regardless of the material,
+				regardless of the pipe network, the pipes are still prone to leaks.
+			</p>
+			<p>
+				Leaks are detrimental; environmentally, economically and socially. Pipelines periodically lose 20-30% of
+				water transported, and can reach up to 50% in some areas. Leaks are estimated to account for up to 70%
+				of these water loses. Considering the large volumes of water transported daily over the world, the loss
+				due to leaks is substantial for one of our most important resources. So I set out to design a leak
+				detection and localization system using <abbr title="artificial intelligence">AI</abbr>.
+			</p>
+			<p>
+				Now I was not inventing the wheel (nor re-inventing it). There already exists a number of solutions to
+				this issue using AI and <abbr title="Internet of Things">IoT</abbr> devices. These solutions however,
+				are either very complex or very expensive but usually both. My initial goal was to take this same
+				technology and with minimal loss to its accuracy and precision, make it less complex and more
+				accessible. However, Covid-19 hit and made it rather difficult to implement and test.
+			</p>
+			<p>
+				With the pandemic preventing me from accomplish my objective, I had to switch things up. Instead of
+				building a smart leak detector I focused on a simulation to find out how accurately a classification
+				model could detect leaks and a deep learning algorithm to localize the leak. I used vibration as the
+				parameter to track (although not practical to use for good reasons from an engineering point of view,
+				but if the advantages outweighed the drawbacks, it could be worth investigating further). My model was
+				able to detect leaks with an accuracy of 82% and could localize 85% of them within a 1m radius for a
+				pipe of 10m long. I had tried to use a classification model to determine the pipe material however this
+				negatively impacted the leak detection and localization which needed this information to proceed with
+				its task.
+			</p>
+			<div class="paragraph">
+				Of course there was much more that could be done. Simulations with:
+				<ul>
+					<li>different pipe lengths</li>
+					<li>wider range of pipe diameters</li>
+					<li>more pipe materials</li>
+				</ul>
+				But most importantly, building a prototype to test this proof of concept. However as with most final
+				year projects, time was the deciding factor and the pandemic did not make matters any easier. You are
+				welcome to go through the <a
+					href="https://drive.google.com/file/d/1PErf7djvWz4gkA_WUOMG9Kq8fwfJrWfm/view?usp=sharing"
+					target="_blank">source code</a>. Bear in mind this was my first ever time building such a
+				complex AI model so I am sure there is lots that could have been done better!
+			</div>
+		</div>
+	</div>
+
+	<div id="theme-toggle" class="fas fa-sun" title="Light mode"></div>
+</body>
+
+</html>

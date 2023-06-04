@@ -1,40 +1,34 @@
-var observer = new IntersectionObserver((parent) => {
-  for (const el of parent) {
-    if (el.isIntersecting) {
-      el.target.classList.add('show');
-    } else {
-      el.target.classList.remove('show');
-    }
-  }
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('show');
+		} else {
+			entry.target.classList.remove('show');
+		}
+	})
 });
 
-var hidden = document.querySelectorAll('.hidden');
+const sections = document.querySelectorAll('.hidden');
+sections.forEach((el) => observer.observe(el));
 
-var itExp =
-  Math.round(
-    (10 * (new Date().getTime() - new Date('2021-04').getTime())) /
-    (1e3 * 3600 * 24 * 365)
-  ) / 10;
+const itExp = Math.round(10 * (new Date().getTime() - new Date('2021-04').getTime()) / (1000 * 3600 * 24 * 365)) / 10;
 
-var collapsible = document.getElementsByClassName('collapsible');
-var projects = document.getElementsByClassName('card--project');
+document.getElementById('it').innerHTML = itExp === 1 ? `${itExp} year` : `${itExp} years`;
 
-for (const el of hidden) {
-  observer.observe(el);
+const collapsible = document.getElementsByClassName('collapsible');
+for (let element of collapsible) {
+	element.addEventListener('click', () => {
+		let content = element.nextElementSibling;
+		content.classList.toggle('content');
+		let icon = element.querySelector('i');
+		icon.classList.toggle('fa-angles-up');
+		icon.classList.toggle('fa-angles-down');
+	});
 }
 
-document.getElementById('it').innerHTML = itExp == 1 ? `${itExp} year` : `${itExp} years`;
-
-for (let el of collapsible) {
-  el.addEventListener('click', () => {
-    let sibling = el.nextElementSibling;
-    let icon = el.querySelector('i');
-    sibling.classList.toggle('content');
-    icon.classList.toggle('fa-angles-up');
-    icon.classList.toggle('fa-angles-down');
-  });
-}
-
-for (let el of projects) {
-  el.addEventListener('click', () => el.querySelector('a').click());
+const projects = document.getElementsByClassName('card--project');
+for (let project of projects) {
+	project.addEventListener('click', () => {
+		project.querySelector('a').click();
+	});
 }

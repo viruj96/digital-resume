@@ -1,16 +1,16 @@
-const themeBtn = document.getElementById('theme-toggle');
+const theme = document.getElementById('theme-toggle');
+theme.addEventListener('click', () => {
+	theme.classList.toggle('fa-moon');
+	theme.classList.toggle('fa-sun');
 
-themeBtn.addEventListener('click', () => {
-  themeBtn.classList.toggle('fa-moon');
-  themeBtn.classList.toggle('fa-sun');
-
-  if (themeBtn.classList.contains('fa-moon')) {
-    document.body.classList.add('light');
-    themeBtn.setAttribute('title', 'Dark mode');
-    themeBtn.style.padding = '0.5% 0.7%';
-  } else {
-    document.body.classList.remove('light');
-    themeBtn.setAttribute('title', 'Light mode');
-    themeBtn.style.padding = '0.5%';
-  }
+	if (theme.classList.contains('fa-moon')) {
+		document.body.classList.add('light');
+		theme.setAttribute('title', 'Dark mode');
+		theme.style.padding = '0.5% 0.7%';
+	}
+	else {
+		document.body.classList.remove('light');
+		theme.setAttribute('title', 'Light mode');
+		theme.style.padding = '0.5%';
+	}
 });
