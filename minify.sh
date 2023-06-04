@@ -19,7 +19,7 @@ if [ ! -d "$directory" ]; then
     mkdir -p "$directory"
 fi
 
-source="./index.html"
+source="./main.html"
 dest="./index.min.html"
 temp_file=$(mktemp)
 
