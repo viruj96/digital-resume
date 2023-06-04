@@ -7,27 +7,34 @@ var observer = new IntersectionObserver((parent) => {
     }
   }
 });
-var c = document.querySelectorAll('.hidden');
-var d =
+
+var hidden = document.querySelectorAll('.hidden');
+
+var itExp =
   Math.round(
     (10 * (new Date().getTime() - new Date('2021-04').getTime())) /
     (1e3 * 3600 * 24 * 365)
   ) / 10;
-var e = document.getElementsByClassName('collapsible');
-var f = document.getElementsByClassName('card--project');
-for (const _c of c) {
-  observer.observe(_c);
+
+var collapsible = document.getElementsByClassName('collapsible');
+var projects = document.getElementsByClassName('card--project');
+
+for (const el of hidden) {
+  observer.observe(el);
 }
-document.getElementById('it').innerHTML = d == 1 ? `${d} year` : `${d} years`;
-for (let _c of e) {
-  _c.addEventListener('click', () => {
-    let _temp2 = _c.nextElementSibling;
-    let _d = _c.querySelector('i');
-    _temp2.classList.toggle('content');
-    _d.classList.toggle('fa-angles-up');
-    _d.classList.toggle('fa-angles-down');
+
+document.getElementById('it').innerHTML = itExp == 1 ? `${itExp} year` : `${itExp} years`;
+
+for (let el of collapsible) {
+  el.addEventListener('click', () => {
+    let sibling = el.nextElementSibling;
+    let icon = el.querySelector('i');
+    sibling.classList.toggle('content');
+    icon.classList.toggle('fa-angles-up');
+    icon.classList.toggle('fa-angles-down');
   });
 }
-for (let _d of f) {
-  _d.addEventListener('click', () => _d.querySelector('a').click());
+
+for (let el of projects) {
+  el.addEventListener('click', () => el.querySelector('a').click());
 }
