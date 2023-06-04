@@ -1,7 +1,17 @@
 #!/bin/bash
 
-# Install minify node package
-npm install -g minify
+package_name="minify"
+package_exists=false
+
+if npm list -g --depth 1 "$package_name" >/dev/null 2>&1; then
+  echo "Package $package_name is already installed with NPM."
+elif yarn list -g --depth=0 "$package_name" >/dev/null 2>&1; then
+  echo "Package $package_name is already installed with Yarn."
+elif pnpm list -g --depth=0 "$package_name" >/dev/null 2>&1; then
+  echo "Package $package_name is already installed with PNPM."
+else
+  npm install -g "$package_name"
+fi
 
 # Declare variables
 css_line=20
