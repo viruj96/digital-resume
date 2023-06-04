@@ -38,4 +38,6 @@ awk -v line="$theme_line" -v text="$theme_text" 'NR == line {$0 = text} {print}'
 minify $dest > $temp_file \
 	&& mv "$temp_file" "$dest"
 
-ls
+git add .
+git commit -m "Upload dist folder"
+git push -u origin main
