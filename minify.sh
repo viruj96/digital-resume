@@ -37,3 +37,5 @@ awk -v line="$theme_line" -v text="$theme_text" 'NR == line {$0 = text} {print}'
 # Minify html file
 minify $dest > $temp_file \
 	&& mv "$temp_file" "$dest"
+
+ls
