@@ -38,6 +38,8 @@ awk -v line="$theme_line" -v text="$theme_text" 'NR == line {$0 = text} {print}'
 minify $dest > $temp_file \
 	&& mv "$temp_file" "$dest"
 
+git config --global user.email "virujbala.96@gmail.com"
+git config --global user.name "Viruj"
 git add .
 git commit -m "Upload dist folder"
 git push -u origin main
