@@ -13,14 +13,15 @@ js_text="	<script defer src='./dist/index.min.js'></script>"
 theme_line=24
 theme_text="	<script defer src='./dist/theme.min.js'></script>"
 
-source="./index.html"
-dest="./dist/index.min.html"
-temp_file=$(mktemp)
-
-directory="./dist/"
+# Create directory if does not exist
+directory="./dist"
 if [ ! -d "$directory" ]; then
     mkdir -p "$directory"
 fi
+
+source="./index.html"
+dest="./index.min.html"
+temp_file=$(mktemp)
 
 # Minify script and style files
 minify ./styles/main.css > ./dist/main.min.css
