@@ -78,7 +78,7 @@ echo Done minifiying files
 
 last_commit=$(git log -1 --pretty=%B)
 version=$((10#${last_commit: -1}))
-new_version=$version + 1
+new_version=$((version + 1))
 git_message="publish v$new_version"
 git add .
 git status
