@@ -10,6 +10,7 @@ elif yarn list -g --depth=0 "$package_name" >/dev/null 2>&1; then
 elif pnpm list -g --depth=0 "$package_name" >/dev/null 2>&1; then
   echo "Package $package_name is already installed with PNPM."
 else
+  echo "Installing $package_name..."
   npm install -g "$package_name"
 fi
 

@@ -24,11 +24,11 @@ for (let element of collapsible) {
 		icon.classList.toggle('fa-angles-up');
 		icon.classList.toggle('fa-angles-down');
 	});
-}
+};
 
 const projects = document.getElementsByClassName('card--project');
 for (let project of projects) {
 	project.addEventListener('click', () => {
 		project.querySelector('a').click();
 	});
-}
+};
