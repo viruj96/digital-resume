@@ -36,6 +36,25 @@ body {
 	background-color: var(--mainBgColor);
 }
 
+::-webkit-scrollbar {
+	width: 1em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px var(--mainBoxShadow);
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	background: var(--mainBgColor);
+	-webkit-box-shadow: 0 -100vh 0 100vh var(--mainBorderColor), inset 0 0 6px var(--hoverColor);
+}
+
 p,
 span,
 li {
@@ -78,6 +97,17 @@ li {
 
 .content {
 	display: none;
+}
+
+h4 {
+	text-align: center;
+	margin: 2em 0 0.5em;
+}
+
+.navigation-btns {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 /* End Shared */
 
@@ -136,6 +166,7 @@ a {
 .links {
 	width: 30%;
 }
+
 /* End Hero */
 
 /* Skills section */
@@ -162,6 +193,7 @@ a {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
+
 /* End Skills */
 
 /* Work section */
@@ -176,6 +208,7 @@ a {
 	background-color: var(--mainBorderColor);
 	height: 1px;
 }
+
 /* End Work */
 
 /* Projects section */
@@ -194,6 +227,7 @@ a {
 .card--project:hover *:not(i) {
 	color: var(--mainLinkColor);
 }
+
 /* End Projects section */
 
 /* Project Pages */
@@ -227,6 +261,7 @@ a {
 .paragraph li {
 	line-height: 1.5;
 }
+
 /* End Projects */
 
 /* Education section */
@@ -239,10 +274,12 @@ a {
 	font-size: 0.9em;
 	font-weight: 100;
 }
+
 /* End Education */
 
 /* Font Awesome */
-.fa-solid, .fa-brands {
+.fa-solid,
+.fa-brands {
 	margin-right: 1%;
 }
 
@@ -257,6 +294,7 @@ a {
 .fa-arrow-left-long {
 	color: var(--mainLinkColor);
 }
+
 /* End Font Awesome */
 
 /* Light-Dark mode */
@@ -281,6 +319,7 @@ a {
 	transition-timing-function: ease-in;
 	box-shadow: 0 0 3px 2px var(--hoverColor);
 }
+
 /* End Light-Dark mode */
 
 /* Scroll Effects */
@@ -300,6 +339,7 @@ a {
 		transition: none;
 	}
 }
+
 /* End Scroll Effects */
 
 /* Responsive */
