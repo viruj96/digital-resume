@@ -3,6 +3,7 @@
 package_name="minify"
 package_exists=false
 
+# Will fail if no package manager is installed
 if npm list -g --depth 1 "$package_name" >/dev/null 2>&1; then
   echo "Package $package_name is already installed with NPM."
 elif yarn list -g --depth=0 "$package_name" >/dev/null 2>&1; then
@@ -26,6 +27,8 @@ js_text="	<script defer src='$js'></script>"
 theme="./dist/theme.min.js"
 theme_line=23
 theme_text="	<script defer src='$theme'></script>"
+
+pages="./dist/pages.min.js"
 
 # Create directory if does not exist
 directory="./dist"
@@ -57,13 +60,16 @@ sed -E 's/(<a[^>]*href=")\.\/views\/([^"]+)\.html"/\1.\/dist\/\2.min.html"/g' "$
 # Minify html files
 views="./views"
 views_css=20
-views_js=21
+views_js=21 # theme.js
+views_js2=22 # pages.js
 for file_path in "$views"/*; do
   if [[ -f "$file_path" ]]; then
     filename=$(basename "$file_path")
     destination_path="$directory/${filename%.*}.min.${filename##*.}"
     awk -v line="$views_css" -v text="	<link rel=stylesheet href='.$css'>" 'NR == line {$0 = text} {print}' "$file_path" > "$destination_path"
     awk -v line="$views_js" -v text="	<script defer src='.$theme'></script>" 'NR == line {$0 = text} {print}' "$destination_path" > "$temp_file" \
+      && mv "$temp_file" "$destination_path"
+    awk -v line="$views_js2" -v text="	<script defer src='.$pages'></script>" 'NR == line {$0 = text} {print}' "$destination_path" > "$temp_file" \
       && mv "$temp_file" "$destination_path"
     sed -i -E 's/(<a[^>]*href=")\.\.\/main\.html#projects"/\1..\/index.html#projects"/g' "$destination_path"
     minify "$destination_path" > "$temp_file" \
