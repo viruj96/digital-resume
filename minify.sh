@@ -44,6 +44,7 @@ temp_file=$(mktemp)
 minify ./styles/main.css > $css
 minify ./scripts/index.js > $js
 minify ./scripts/theme.js > $theme
+minify ./scripts/pages.js > $pages
 
 # Update html script and style files
 awk -v line="$css_line" -v text="$css_text" 'NR == line {$0 = text} {print}' "$source" > "$dest"
