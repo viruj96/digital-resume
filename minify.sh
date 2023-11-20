@@ -85,7 +85,7 @@ minify $dest > $temp_file \
 echo Done minifiying files
 
 last_commit=$(git log -1 --pretty=%B)
-version=$((10#${last_commit: -1}))
+version=$(echo "$last_commit" | grep -oE '[0-9]+' | tail -n1)
 new_version=$((version + 1))
 git_message="publish v$new_version"
 git add .
