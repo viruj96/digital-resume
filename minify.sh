@@ -84,10 +84,9 @@ minify $dest > $temp_file \
 
 echo Done minifiying files
 
-last_commit=$(git log -1 --pretty=%B)
-version=$(echo "$last_commit" | grep -oE '[0-9]+' | tail -n1)
-new_version=$((version + 1))
-git_message="publish v$new_version"
+# Update version and commit
+grunt bump:major --message=grunt.version
+
 git add .
 git status
 git commit -m "$git_message"

@@ -1,0 +1,15 @@
+{
+  "name": "digital-resume",
+  "version": "12.3.0",
+  "description": "My online CV",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "author": "viruj96",
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-bump": "^0.8.0",
+    "husky": "^8.0.0"
+  }
+}
