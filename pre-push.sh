@@ -11,27 +11,5 @@ if git diff --cached --name-only | grep -qE "^($(IFS="|"; echo "${DISALLOWED_FOL
     exit 1
 fi
 
-# Open terminal for prompts
-gnome-terminal -- bash c '
-
 # If no changes in disallowed folders or files, allow the push
-read -p "Minor (m) / Patch (p)? " bump_value
-read -p "Commit message: " message
-
-while [ "${bump_value}" != 'm' ] || [ "${bump_value}" != 'p' ]
-do
-	if [ 'm' = "${bump_value,,}" ]
-	then
-		grunt bump:minor --message="${message}"
-	fi
-	
-	if [ 'p' = "${bump_value,,}" ]
-	then
-		grunt bump:patch --message="${message}"
-	fi
-
-	read -p "Minor (m) / Patch (p)? " bump_value
-done
-
-exit 1
-'
+exit 0

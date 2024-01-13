@@ -85,10 +85,4 @@ minify $dest > $temp_file \
 echo Done minifiying files
 
 # Update version and commit
-grunt bump:major --message=grunt.version
-
-git add .
-git status
-git commit -m "$git_message"
-git pull .
-git push -u origin main
+npx grunt bump:major

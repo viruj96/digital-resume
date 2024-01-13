@@ -1,13 +1,11 @@
 module.exports = function(grunt) {
-	const message = grunt.options("message");
-
 	grunt.initConfig({
 	  bump: {
 		options: {
 		  files: ['package.json'],
 		  updateConfigs: [],
 		  commit: true,
-		  commitMessage: `${message}`,
+		  commitMessage: 'publish v%VERSION%',
 		  commitFiles: ['-a'],
 		  createTag: true,
 		  tagName: 'v%VERSION%',

@@ -1,6 +1,6 @@
 {
   "name": "digital-resume",
-  "version": "12.3.0",
+  "version": "12.4.1",
   "description": "My online CV",
   "scripts": {
     "prepare": "husky install"
