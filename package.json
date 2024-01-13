@@ -1,12 +1,21 @@
 {
   "name": "digital-resume",
-  "version": "12.4.1",
+  "version": "12.5.0",
   "description": "My online CV",
   "scripts": {
     "prepare": "husky install"
   },
-  "author": "viruj96",
-  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Viruj Balasoupramanien",
+    "email": "virujbala.96@gmail.com",
+    "url": "https://github.com/viruj96"
+  },
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/viruj96/digital-resume.git"
+  },
+  "homepage": "https://github.com/viruj96/digital-resume.git",
   "devDependencies": {
     "grunt": "^1.6.1",
     "grunt-bump": "^0.8.0",
